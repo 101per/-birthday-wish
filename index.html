@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>生日快乐 - 胡宇萱</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Page 1 -->
+  <div class="page page1 active">
+    <div class="parallax-layer" style="z-index: -3; transform: translateZ(-10px);">
+      <h1>🎉 生日快乐！胡宇萱 🎉</h1>
+    </div>
+    <div class="parallax-layer" style="z-index: -2; transform: translateZ(-5px);">
+      <p>愿你每天都开心快乐 😊</p>
+    </div>
+    <div class="parallax-layer" style="z-index: -1; transform: translateZ(0px);">
+      <button onclick="nextPage()">下一页 ➜</button>
+    </div>
+  </div>
+
+  <!-- Page 2 -->
+  <div class="page page2">
+    <div class="parallax-layer" style="z-index: -3; transform: translateZ(-10px);">
+      <div class="candle">
+        <div class="flame"></div>
+      </div>
+    </div>
+    <div class="parallax-layer" style="z-index: -2; transform: translateZ(-5px);">
+      <p>🎂 点燃蜡烛，许个愿吧~</p>
+    </div>
+    <div class="parallax-layer" style="z-index: -1; transform: translateZ(0px);">
+      <button onclick="nextPage()">继续 ➜</button>
+    </div>
+  </div>
+
+  <!-- Page 3 -->
+  <div class="page page3">
+    <canvas id="fireworksCanvas"></canvas>
+    <div class="parallax-layer" style="z-index: -1; transform: translateZ(0px);">
+      <p>🎆 烟花绽放，为你庆祝！</p>
+      <button onclick="nextPage()">继续 ➜</button>
+    </div>
+  </div>
+
+  <!-- Page 4 -->
+  <div class="page page4">
+    <div class="parallax-layer" style="z-index: -2; transform: translateZ(-5px);">
+      <img src="hu_yuxuan.jpg" alt="胡宇萱的照片" width="300" height="300" />
+    </div>
+    <div class="parallax-layer" style="z-index: -1; transform: translateZ(0px);">
+      <p>📸 这是你的照片，祝你生日快乐！</p>
+      <p>🌟 愿你在新的一岁里心想事成，天天开心！</p>
+      <button onclick="nextPage()">继续 ➜</button>
+    </div>
+  </div>
+
+  <!-- Page 5 -->
+  <div class="page page5">
+    <div class="parallax-layer" style="z-index: -2; transform: translateZ(-5px);">
+      <h2>✨ 永远记住这一刻 ✨</h2>
+    </div>
+    <div class="parallax-layer" style="z-index: -1; transform: translateZ(0px);">
+      <p>希望未来的每一天都像今天一样美好！</p>
+      <button onclick="nextPage()">完成 🎈</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
