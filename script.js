@@ -76,6 +76,47 @@ function nextPage() {
   }
 }
 
+// 点击页面显示文字
+const page1 = document.querySelector('.page1');
+const hiddenText = document.getElementById('hiddenText');
+const subText = document.getElementById('subText');
+let textShown = false;
+
+page1.addEventListener('click', () => {
+  if (!textShown) {
+    hiddenText.classList.add('show');
+    subText.classList.add('show');
+    textShown = true;
+  }
+});
+
+// 开心按钮点击效果
+function handleHappy() {
+  const btn = document.getElementById('happyBtn');
+  btn.classList.add('happy');
+  setTimeout(() => {
+    btn.classList.remove('happy');
+  }, 500);
+
+  // 触发烟花
+  createFirework();
+}
+
+// 不开心按钮逃跑效果
+function handleSad() {
+  const btn = document.getElementById('sadBtn');
+  btn.classList.add('sad');
+  setTimeout(() => {
+    btn.classList.remove('sad');
+    // 随机位置
+    const x = Math.random() * (window.innerWidth - btn.offsetWidth);
+    const y = Math.random() * (window.innerHeight - btn.offsetHeight);
+    btn.style.left = `${x}px`;
+    btn.style.top = `${y}px`;
+    btn.style.position = 'absolute';
+  }, 500);
+}
+
 // 烟花动画
 canvas = document.getElementById('fireworksCanvas');
 ctx = canvas.getContext('2d');
@@ -84,16 +125,16 @@ let fireworks = [];
 
 function createFirework() {
   let x = Math.random() * canvas.width;
-  let y = Math.random() * canvas.height / 2;
+  let y = Math.random() * (canvas.height / 3); // 让烟花从上部1/3区域开始
   let particles = [];
   for (let i = 0; i < 100; i++) {
     particles.push({
       x: x,
       y: y,
-      radius: Math.random() * 3 + 1,
+      radius: Math.random() * 2 + 0.5, // 减小粒子半径
       color: `hsl(${Math.random() * 360}, 100%, 50%)`,
       angle: Math.random() * Math.PI * 2,
-      speed: Math.random() * 5 + 2,
+      speed: Math.random() * 4 + 1, // 稍微降低速度
       alpha: 1
     });
   }
