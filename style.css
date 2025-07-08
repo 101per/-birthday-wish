@@ -9,7 +9,7 @@ body {
   transition: background-color 0.5s ease;
 }
 
-/* 3D 视差滚动容器 */
+/* 页面基础样式 */
 .page {
   position: absolute;
   width: 100%;
@@ -22,20 +22,6 @@ body {
   opacity: 0;
   transform: translateX(100%);
   transition: opacity 0.8s ease, transform 0.8s ease;
-  perspective: 1000px; /* 添加透视效果 */
-}
-
-.parallax-layer {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform-style: preserve-3d;
-  transition: transform 0.2s ease-out;
-}
-
-/* 动态变换通过 JS 控制 */
-body.enable-3d .parallax-layer {
-  transform: translateX(-50%) translateY(-50%) rotateX(0deg) rotateY(0deg);
 }
 
 .page.active {

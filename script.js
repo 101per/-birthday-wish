@@ -1,15 +1,3 @@
-// 翻页功能
-let currentPage = 0;
-const pages = document.querySelectorAll('.page');
-
-function nextPage() {
-  if (currentPage < pages.length - 1) {
-    pages[currentPage].classList.remove('active');
-    currentPage++;
-    pages[currentPage].classList.add('active');
-  }
-}
-
 // 3D 视差滚动效果
 let enable3D = false;
 let layers = document.querySelectorAll('.parallax-layer');
@@ -75,6 +63,18 @@ function requestGyro() {
 
 // 初始化 3D 效果
 init3DEffect();
+
+// 翻页功能
+let currentPage = 0;
+const pages = document.querySelectorAll('.page');
+
+function nextPage() {
+  if (currentPage < pages.length - 1) {
+    pages[currentPage].classList.remove('active');
+    currentPage++;
+    pages[currentPage].classList.add('active');
+  }
+}
 
 // 烟花动画
 canvas = document.getElementById('fireworksCanvas');
