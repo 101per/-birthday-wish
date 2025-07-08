@@ -50,6 +50,29 @@ function handleOrientation(event) {
   });
 }
 
+// 请求陀螺仪权限
+function requestGyro() {
+  if (window.DeviceOrientationEvent && typeof window.DeviceOrientationEvent.requestPermission === 'function') {
+    window.DeviceOrientationEvent.requestPermission()
+      .then(permissionState => {
+        if (permissionState === 'granted') {
+          enable3D = true;
+          document.body.classList.add('enable-3d');
+          window.addEventListener('deviceorientation', handleOrientation);
+          alert('陀螺仪已启用！请旋转手机体验3D效果~');
+        } else {
+          alert('未授权陀螺仪访问权限，请前往Safari设置中开启“运动与方向访问”权限。');
+        }
+      })
+      .catch(error => {
+        console.error('请求陀螺仪权限失败:', error);
+        alert('无法启用陀螺仪，请确保设备支持并重试。');
+      });
+  } else {
+    alert('当前设备或浏览器不支持陀螺仪功能。');
+  }
+}
+
 // 初始化 3D 效果
 init3DEffect();
 
